@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>JS_Clock</title>
+</head>
+
+<body style="background-color: rgb(235, 217, 217);">
+    <section class="container">
+        <div class="jumbotron jumbotron-fluid mx-4 my-4" style="box-shadow: 2px 0px 15px 2px rgb(71, 62, 62);">
+            <div class="container" style="text-align: center">
+                <h1 class="display-6">Current Time & Date</h1>
+                <h5 id="py"></h5>
+                <button onclick="printpage()"
+                    style="background-color: black; color: white; border-radius: 52px; outline: none;"
+                    class="my-3">Print Current Time</button>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        var interval = setInterval(fun, 100);
+        const opt = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
+        function fun() {
+            var time = new Date
+            document.getElementById('py').innerText = time.toLocaleTimeString() + ' On ' + time.toLocaleDateString(undefined, opt)
+        }
+
+        function printpage() {
+            window.print()
+        }
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
